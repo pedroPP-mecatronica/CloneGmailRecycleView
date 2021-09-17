@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_view_background">
+    <LinearLayout
+        android:id="@+id/conteiner_inicial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle"
+            android:textColor="@color/white"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:text="P"
+            android:textSize="30dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/conteiner_informations"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/conteiner_inicial"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/text_remetente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/text_data"
+            android:text="PEDRO PAULO" />
+
+        <TextView
+            android:id="@+id/text_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:text="18 mai" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/star"
+        app:layout_constraintStart_toStartOf="@id/conteiner_informations"
+        app:layout_constraintTop_toBottomOf="@id/conteiner_informations">
+        <TextView
+            android:id="@+id/text_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            tools:text="Bootcamp Eduzz Fullstack Developer" />
+
+        <TextView
+            android:id="@+id/text_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_subject"
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="O evento de lançamento do bootcamp Eduzz Fullstack Developer é uma excelente oportunidade para você conhecer mais sobre a Eduzz, a nova parceira da DIO; ter mais detalhes sobre o bootcamp e sobre o processo de seleção para contratação de dev's jr. e estagiários." />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/star"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/content"
+        app:layout_constraintEnd_toEndOf="parent"
+   >
+
+        <ImageButton
+            android:id="@+id/img_btn_star"
+            android:background="@color/white"
+            android:layout_marginEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
