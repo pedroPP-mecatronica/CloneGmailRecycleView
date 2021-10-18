@@ -16,6 +16,7 @@
         >
 
         <TextView
+            android:id="@+id/text_user"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/circle"
@@ -39,14 +40,16 @@
             android:id="@+id/text_remetente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@id/text_data"
-            android:text="PEDRO PAULO" />
+            android:layout_alignTop="@id/text_date"
+            android:text="PEDRO PAULO"
+            android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/text_data"
+            android:id="@+id/text_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
             android:text="18 mai" />
@@ -68,6 +71,7 @@
             android:layout_alignParentTop="true"
             android:ellipsize="end"
             android:singleLine="true"
+            android:textStyle="bold"
             tools:text="Bootcamp Eduzz Fullstack Developer" />
 
         <TextView
@@ -76,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_subject"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:singleLine="true"
             tools:text="O evento de lançamento do bootcamp Eduzz Fullstack Developer é uma excelente oportunidade para você conhecer mais sobre a Eduzz, a nova parceira da DIO; ter mais detalhes sobre o bootcamp e sobre o processo de seleção para contratação de dev's jr. e estagiários." />
 
     </RelativeLayout>
@@ -91,12 +95,13 @@
 
         <ImageButton
             android:id="@+id/img_btn_star"
-            android:background="@color/white"
-            android:layout_marginEnd="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@color/white"
             android:src="@drawable/ic_star" />
 
     </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
