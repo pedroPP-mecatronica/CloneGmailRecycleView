@@ -23,7 +23,6 @@ class EmailAdapter(val emails: MutableList<Email>) : Adapter<EmailAdapter.EmailV
                 itemView.text_subject.text = subject
                 itemView.text_content.text = preview
                 itemView.text_date.text = date
-
             }
         }
     }
