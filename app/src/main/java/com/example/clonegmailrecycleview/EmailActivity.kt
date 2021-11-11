@@ -17,21 +17,18 @@ import java.util.*
 class EmailActivity : AppCompatActivity() {
 
 
-    private lateinit var adapter:EmailAdapter
+    private lateinit var adapter: EmailAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//O adapter nada mais é que um padrão de projeto “design pattern”
-// Utilizado para converter uma interface possibilitando seu funcionamento com outra
-// Não algo exclusivo para o RecyclerView.
+
         adapter = EmailAdapter(fakeEmails())
         recyclerViewMain.adapter = adapter
         recyclerViewMain.layoutManager = LinearLayoutManager(this)
 
-        val helper = androidx.recyclerview.widget.ItemTouchHelper(
+        val helper = ItemTouchHelper(
             ItemTouchHelper(
-                androidx.recyclerview.widget.ItemTouchHelper.UP
-                        or androidx.recyclerview.widget.ItemTouchHelper.DOWN,
+                0,
                 androidx.recyclerview.widget.ItemTouchHelper.LEFT
             )
         )
@@ -39,10 +36,9 @@ class EmailActivity : AppCompatActivity() {
 
     }
 
+
     inner class ItemTouchHelper(dragDirs: Int, swipeDirs: Int) :
-        androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback(
-            dragDirs, swipeDirs
-        ) {
+        androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback(dragDirs, swipeDirs) {
         override fun onMove(
             recyclerView: RecyclerView,
             viewHolder: RecyclerView.ViewHolder,
@@ -56,7 +52,8 @@ class EmailActivity : AppCompatActivity() {
         }
 
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-            TODO("Not yet implemented")
+            adapter.emails.removeAt(viewHolder.adapterPosition)
+            adapter.notifyItemRemoved(viewHolder.adapterPosition)
         }
     }
 
